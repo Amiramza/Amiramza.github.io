@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8042646507105484"
+     crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        code {
+            color:rgb(14, 9, 48);
+        }
+        body {
+        
+        align-items: center;
+        width: 50%;
+        margin: 0 auto;
+        
+        
+      }
+    </style>
+</head>
+<body>
+    <p>Welcome to the Amiramza.github.io wiki!</p>
+<h1 id="introduction-to-vagrant">Introduction to Vagrant</h1>
+<p>Vagrant is a tool that helps developers to create and configure virtual development environments. It works by using a simple, easy-to-read configuration file, called a <code>Vagrantfile</code>, which describes the kind of machine you want to run, as well as how to configure it. This makes it incredibly easy to set up and maintain a consistent environment across your entire development team.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>VirtualBox or another virtualization provider</li>
+<li>Vagrant installed on your local machine</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="virtualbox-install-">VirtualBox Install:</h3>
+<ul>
+<li><p><code>Window and Mac</code> Users should directly Download the executable from <a href="https://www.virtualbox.org/wiki/Download_Old_Builds_6_1">https://www.virtualbox.org/wiki/Download_Old_Builds_6_1</a> and install VirtualBox-6.1 (the latest version is vitualbox-7 but that is not supported by vagrant as a provider) while <code>Linux Users</code> either follow the documentation at <a href="https://www.virtualbox.org/wiki/Linux_Downloads">https://www.virtualbox.org/wiki/Linux_Downloads</a> or follow these steps</p>
+<ul>
+<li><p>In the following command replace  <code>&lt;mydist&gt;</code> with the output of:</p>
+<pre><code class="lang-bash"><span class="hljs-attribute">lsb_release</span> -sc
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-keyword">echo</span> <span class="hljs-string">"deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib"</span> | sudo tee /etc/apt/sources.<span class="hljs-keyword">list</span>.d/virtualbox.<span class="hljs-keyword">list</span>
+</code></pre>
+</li>
+<li><p>Then add the virtualbox keys to your system with the following command.</p>
+<pre><code class="lang-bash">wget -O- https:<span class="hljs-regexp">//</span>www.virtualbox.org<span class="hljs-regexp">/download/</span>oracle_vbox_2016.asc | sudo gpg --dearmor --yes --output <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/keyrings/</span>oracle-virtualbox-<span class="hljs-number">2016</span>.gpg
+</code></pre>
+</li>
+</ul>
+</li>
+<li>The key fingerprints are</li>
+<li><p><code>B9F8 D658 297A F3EF C18D  5CDF A2F6 83C5 2980 AECF
+Oracle Corporation (VirtualBox archive signing key) &lt;info@virtualbox.org&gt;</code></p>
+<ul>
+<li>then install virtualbox-6.1 using:<pre><code class="lang-bash">sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span>
+sudo apt-<span class="hljs-built_in">get</span> install virtualbox<span class="hljs-number">-6.1</span>
+</code></pre>
+<h3 id="vagrant-installation">Vagrant Installation</h3>
+</li>
+</ul>
+</li>
+<li><p>Either follow the documentation section for your distro at <a href="https://developer.hashicorp.com/vagrant/downloads">https://developer.hashicorp.com/vagrant/downloads</a> or follow the following steps [Ubuntu/Debian]</p>
+</li>
+</ul>
+<pre><code class="lang-bash">wget -O- http<span class="hljs-variable">s:</span>//apt.releases.hashicorp.<span class="hljs-keyword">com</span>/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main"</span> | sudo tee /etc/apt/sources.<span class="hljs-keyword">list</span>.d/hashicorp.<span class="hljs-keyword">list</span>
+sudo apt <span class="hljs-keyword">update</span> &amp;&amp; sudo apt install vagrant
+</code></pre>
+<ul>
+<li>In case of any errors regarding virtualization on your system such as <code>kvm_intel</code> or <code>VT-x</code> follow the installation section of this documentation. 
+<a href="https://developer.hashicorp.com/vagrant/docs/installation">https://developer.hashicorp.com/vagrant/docs/installation</a></li>
+</ul>
+<h2 id="vagrant-providers">Vagrant providers</h2>
+<h2 id="creating-your-first-vagrant-environment">Creating Your First Vagrant Environment</h2>
+<ol>
+<li>Open a terminal or command prompt window</li>
+<li>Run <code>vagrant init hashicorp/bionic64</code> to create a new Vagrant environment using the Ubuntu 18.04 LTS (Bionic Beaver) base box.</li>
+<li>Run <code>vagrant up</code> to start the virtual machine</li>
+<li>Run <code>vagrant ssh</code> to log into the virtual machine</li>
+<li>To stop the virtual machine, run <code>vagrant halt</code></li>
+<li>To destroy the virtual machine, run <code>vagrant destroy</code></li>
+</ol>
+<h2 id="configuring-your-vagrant-environment">Configuring Your Vagrant Environment</h2>
+<p>The <code>Vagrantfile</code> is the key to configuring your Vagrant environment. Here are some examples of things you can configure in your <code>Vagrantfile</code>:</p>
+
+</body>
+</html>
