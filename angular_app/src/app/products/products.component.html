@@ -1,0 +1,18 @@
+
+<div *ngFor="let item of products">
+   
+    <div class="card display-3 bg-gradient">
+        <div class="card-body">
+            <h5 class="card-title bg-primary form-control-lg">{{item.name}}</h5>
+            <p class="card-text">{{item.description}}</p>
+            <div class="card-footer">
+                    <div>
+                        <p>{{item.price}}</p>
+                        <p>{{item.stock}}</p>
+
+                    </div>
+                </div>
+          
+    </div>
+
+</div>
